@@ -27,27 +27,27 @@
     <nav class="nav">
       <ul class="nav__list">
         <li>
-          <a href="/#home" class="nav__link active-link" title="Home">
+          <a href="/portfolio#home" class="nav__link active-link" title="Home">
             <i class="ri-home-line"></i>
           </a>
         </li>
         <li>
-          <a href="/#projects" class="nav__link" title="Projects">
+          <a href="/portfolio#projects" class="nav__link" title="Projects">
             <i class="ri-folder-line"></i>
           </a>
         </li>
         <li>
-          <a href="/#services" class="nav__link" title="Services">
+          <a href="/portfolio#services" class="nav__link" title="Services">
             <i class="ri-file-edit-line"></i>
           </a>
         </li>
         <li>
-          <a href="/#experience" class="nav__link" title="Experience">
+          <a href="/portfolio#experience" class="nav__link" title="Experience">
             <i class="ri-honour-line"></i>
           </a>
         </li>
         <li>
-          <a href="/contact.html/#contact" class="nav__link" title="Contact">
+          <a href="/contact.html/portfolio#contact" class="nav__link" title="Contact">
             <i class="ri-send-plane-line"></i>
           </a>
         </li>
@@ -70,8 +70,8 @@
             <div class="perfil__data">
               <h1 class="perfil__name">Samuel John</h1>
               <div class="perfil__buttons">
-                <a href="/#projects" class="button">Projects</a>
-                <a href="/#services" class="button button__black">Services</a>
+                <a href="/portfolio#projects" class="button">Projects</a>
+                <a href="/portfolio#services" class="button button__black">Services</a>
               </div>
             </div>
           </div>
@@ -115,10 +115,10 @@
               >
                 <i class="ri-linkedin-box-line"></i>
               </a>
-              <a href="/#" class="about__link" target="_blank">
+              <a href="/portfolio#" class="about__link" target="_blank">
                 <i class="ri-github-line"></i>
               </a>
-              <a href="/#" class="about__link" target="_blank">
+              <a href="/portfolio#" class="about__link" target="_blank">
                 <i class="ri-behance-line"></i>
               </a>
             </div>
@@ -135,7 +135,7 @@
               He doesn't write messages on social networks, send me an email and
               I'll answer you.
             </p>
-            <a href="/contact.html/#contact" class="button">Contact Me</a>
+            <a href="/contact.html/portfolio#contact" class="button">Contact Me</a>
           </div>
 
           <!--===== SKILLS =====-->
@@ -447,7 +447,7 @@
          
 
           <article class="projects__card">
-            <a href="/#" target="_blank" class="projects__image">
+            <a href="/portfolio#" target="_blank" class="projects__image">
               <img
                 draggable="false"
                 src="./assets/img/projects/cmps.png"
@@ -484,7 +484,7 @@
               />
             </div>
 
-            <a href="/#" target="_blank" class="projects__button">
+            <a href="/portfolio#" target="_blank" class="projects__button">
               <i class="ri-link"></i>
               <span>Visit Project</span>
             </a>
@@ -682,13 +682,13 @@
 
           <ul class="footer__links">
             <li>
-              <a href="/#home" class="footer__link">Home</a>
+              <a href="/portfolio#home" class="footer__link">Home</a>
             </li>
             <li>
-              <a href="/#services" class="footer__link">Services</a>
+              <a href="/portfolio#services" class="footer__link">Services</a>
             </li>
             <li>
-              <a href="/#projects" class="footer__link">Projects</a>
+              <a href="/portfolio#projects" class="footer__link">Projects</a>
             </li>
           </ul>
         </div>
@@ -710,11 +710,11 @@
         </div>
       </div>
 
-      <!-- <span class="footer__copy"> &/#169; All Rights Reserved By JSamuelO </span> -->
+      <!-- <span class="footer__copy"> &/portfolio#169; All Rights Reserved By JSamuelO </span> -->
     </footer>
 
     <!--========== SCROLL UP ==========-->
-    <a href="/#" class="scrollup" id="scroll-up">
+    <a href="/portfolio#" class="scrollup" id="scroll-up">
       <i class="ri-arrow-up-line"></i>
     </a>
     <!--=============== SCROLLREVEAL ===============-->
@@ -725,6 +725,22 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis/dist/lenis.min.js"></script>
+<script>
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true,
+  })
+
+  function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+  }
+
+  requestAnimationFrame(raf)
+</script>
+
 
     <!--=============== MAIN JS ===============-->
     <script src="./assets/js/main.js"></script>
