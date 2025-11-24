@@ -121,10 +121,10 @@ img {
 
   /* The Blur Effect */
   filter: blur(20px);
-  transform: scale(1.1); 
+  transform: scale(1.1);
 
   z-index: 0;
-  
+
   opacity: 1;
   transition: opacity 500ms ease-in-out;
 }
@@ -132,7 +132,7 @@ img {
 /* 2. The Real Image (Big Image) */
 .blurred-img img {
   position: relative;
-  z-index: 0;
+  /* z-index: 1; */
   display: block;
   width: 100%;
   height: auto;
