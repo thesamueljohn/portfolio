@@ -60,7 +60,7 @@
 }
 
 html {
-   scroll-behavior: auto;
+  scroll-behavior: auto;
 }
 
 body,
@@ -106,47 +106,50 @@ img {
 }
 /* ============== BLUR IMAGES LOADING ======================= */
 .blurred-img {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   position: relative;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
-/* The pulsing effect while loading */
+/* 1. The Placeholder (Small Image) */
 .blurred-img::before {
   content: "";
   position: absolute;
   inset: 0;
-  opacity: 0;
-  animation: pulse 2.5s infinite;
-  background-color: rgba(255, 255, 255, 0.2); 
-}
+  background-image: var(--bg);
+  background-size: cover;
+  background-position: center;
 
-@keyframes pulse {
-  0% { opacity: 0; }
-  50% { opacity: 0.1; }
-  100% { opacity: 0; }
-}
+  /* The Blur Effect */
+  filter: blur(20px);
+  transform: scale(1.1); 
 
-.blurred-img.loaded::before {
-  animation: none; 
-  content: none;
-}
-
-.blurred-img img {
-  opacity: 0;
-  width: 100%;
-  height: auto; 
-  display: block;
-  object-fit: cover;
+  z-index: 0;
+  
+  opacity: 1;
   transition: opacity 500ms ease-in-out;
 }
 
-.blurred-img.loaded img {
-  opacity: 1;
+/* 2. The Real Image (Big Image) */
+.blurred-img img {
+  position: relative;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: auto;
+
+  /* Start hidden */
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
 }
 
+/* 3. The Loaded State (Triggered by JS) */
+.blurred-img.loaded::before {
+  opacity: 0; /* Fade the blur OUT */
+}
+
+.blurred-img.loaded img {
+  opacity: 1; /* Fade the real image IN */
+}
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
@@ -222,13 +225,24 @@ img {
   display: grid;
   overflow: hidden;
 }
+
+.perfil__blur {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
 .perfil__img {
   filter: grayscale(1) opacity(0.7);
   position: absolute;
   height: 129%;
   object-fit: cover;
-  transform: translate(0px, -30px);
   justify-self: center;
+}
+
+.perfil__blur img {
+  transform: translate(0px, 0px);
+  height: 100% !important;
 }
 .perfil__data {
   align-self: flex-end;
@@ -411,7 +425,7 @@ img {
 }
 
 .projects__img {
-  transition: transform 0.4s;
+  transition: transform 0.4s !important;
 }
 
 .projects__name {
