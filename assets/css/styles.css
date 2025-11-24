@@ -104,6 +104,49 @@ img {
   max-width: 100%;
   height: auto;
 }
+/* ============== BLUR IMAGES LOADING ======================= */
+.blurred-img {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden; 
+}
+
+/* The pulsing effect while loading */
+.blurred-img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: pulse 2.5s infinite;
+  background-color: rgba(255, 255, 255, 0.2); 
+}
+
+@keyframes pulse {
+  0% { opacity: 0; }
+  50% { opacity: 0.1; }
+  100% { opacity: 0; }
+}
+
+.blurred-img.loaded::before {
+  animation: none; 
+  content: none;
+}
+
+.blurred-img img {
+  opacity: 0;
+  width: 100%;
+  height: auto; 
+  display: block;
+  object-fit: cover;
+  transition: opacity 500ms ease-in-out;
+}
+
+.blurred-img.loaded img {
+  opacity: 1;
+}
+
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {

@@ -84,3 +84,23 @@ sr.reveal(`.about`, { origin: "right", delay: 1200 });
 sr.reveal(`.projects__card, .services__card, .experience__card`, {
   interval: 100,
 });
+
+
+// Image Blur Load Effect 
+document.addEventListener("DOMContentLoaded", () => {
+  const blurredImageDivs = document.querySelectorAll(".blurred-img");
+
+  blurredImageDivs.forEach(div => {
+    const img = div.querySelector("img");
+    
+    function loaded() {
+      div.classList.add("loaded");
+    }
+
+    if (img.complete) {
+      loaded();
+    } else {
+      img.addEventListener("load", loaded);
+    }
+  });
+});
