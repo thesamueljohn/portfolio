@@ -27,31 +27,27 @@
     <nav class="nav">
       <ul class="nav__list">
         <li>
-          <a href="/portfolio#home" class="nav__link active-link" title="Home">
+          <a href="#home" class="nav__link active-link" title="Home">
             <i class="ri-home-line"></i>
           </a>
         </li>
         <li>
-          <a href="/portfolio#projects" class="nav__link" title="Projects">
+          <a href="#projects" class="nav__link" title="Projects">
             <i class="ri-folder-line"></i>
           </a>
         </li>
         <li>
-          <a href="/portfolio#services" class="nav__link" title="Services">
+          <a href="#services" class="nav__link" title="Services">
             <i class="ri-file-edit-line"></i>
           </a>
         </li>
         <li>
-          <a href="/portfolio#experience" class="nav__link" title="Experience">
+          <a href="#experience" class="nav__link" title="Experience">
             <i class="ri-honour-line"></i>
           </a>
         </li>
         <li>
-          <a
-            href="/contact.html/portfolio#contact"
-            class="nav__link"
-            title="Contact"
-          >
+          <a href="#contact" class="nav__link" title="Contact">
             <i class="ri-send-plane-line"></i>
           </a>
         </li>
@@ -79,10 +75,8 @@
             <div class="perfil__data">
               <h1 class="perfil__name">Samuel John</h1>
               <div class="perfil__buttons">
-                <a href="/portfolio#projects" class="button">Projects</a>
-                <a href="/portfolio#services" class="button button__black"
-                  >Services</a
-                >
+                <a href="#projects" class="button">Projects</a>
+                <a href="#services" class="button button__black">Services</a>
               </div>
             </div>
           </div>
@@ -169,9 +163,7 @@
               He doesn't write messages on social networks, send me an email and
               I'll answer you.
             </p>
-            <a href="/contact.html/portfolio#contact" class="button"
-              >Contact Me</a
-            >
+            <a href="#contact" class="button">Contact Me</a>
           </div>
 
           <!--===== SKILLS =====-->
@@ -307,9 +299,7 @@
             >
               <div
                 class="blurred-img"
-                style="
-                  --bg: url('../img/projects/awmc-25-small.png');
-                "
+                style="--bg: url('../img/projects/awmc-25-small.png')"
               >
                 <img
                   draggable="false"
@@ -430,9 +420,7 @@
             >
               <div
                 class="blurred-img"
-                style="
-                  --bg: url('./assets/img/projects/pagination-small.png');
-                "
+                style="--bg: url('./assets/img/projects/pagination-small.png')"
               >
                 <img
                   draggable="false"
@@ -488,9 +476,7 @@
             >
               <div
                 class="blurred-img"
-                style="
-                  --bg: url('./assets/img/projects/mustergate-small.png');
-                "
+                style="--bg: url('./assets/img/projects/mustergate-small.png')"
               >
                 <img
                   draggable="false"
@@ -543,9 +529,7 @@
             <a href="#" target="_blank" class="projects__image">
               <div
                 class="blurred-img"
-                style="
-                  --bg: url('./assets/img/projects/cmps-small.png');
-                "
+                style="--bg: url('./assets/img/projects/cmps-small.png')"
               >
                 <img
                   draggable="false"
@@ -598,9 +582,7 @@
             >
               <div
                 class="blurred-img"
-                style="
-                  --bg: url('./assets/img/projects/calculator-small.png');
-                "
+                style="--bg: url('./assets/img/projects/calculator-small.png')"
               >
                 <img
                   draggable="false"
@@ -797,13 +779,13 @@
 
           <ul class="footer__links">
             <li>
-              <a href="/portfolio#home" class="footer__link">Home</a>
+              <a href="#home" class="footer__link">Home</a>
             </li>
             <li>
-              <a href="/portfolio#services" class="footer__link">Services</a>
+              <a href="#services" class="footer__link">Services</a>
             </li>
             <li>
-              <a href="/portfolio#projects" class="footer__link">Projects</a>
+              <a href="#projects" class="footer__link">Projects</a>
             </li>
           </ul>
         </div>
@@ -833,11 +815,11 @@
         </div>
       </div>
 
-      <!-- <span class="footer__copy"> &/portfolio#169; All Rights Reserved By JSamuelO </span> -->
+      <!-- <span class="footer__copy"> &#169; All Rights Reserved By JSamuelO </span> -->
     </footer>
 
     <!--========== SCROLL UP ==========-->
-    <a href="/portfolio#" class="scrollup" id="scroll-up">
+    <a href="#" class="scrollup" id="scroll-up">
       <i class="ri-arrow-up-line"></i>
     </a>
     <!--=============== SCROLLREVEAL ===============-->
@@ -849,20 +831,6 @@
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis/dist/lenis.min.js"></script>
-    <script>
-      const lenis = new Lenis({
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        smooth: true,
-      });
-
-      function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      }
-
-      requestAnimationFrame(raf);
-    </script>
 
     <!--=============== MAIN JS ===============-->
     <script src="./assets/js/main.js"></script>

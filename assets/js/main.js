@@ -10,7 +10,7 @@ const sendEmail = (error) => {
     .sendForm(
       "service_7sp78k5",
       "template_hv48yxp",
-      "/contact.html/#contact-form",
+      "#contact-form",
       "k2tRZLsoCp2SLu9jW"
     )
     .then(
@@ -68,6 +68,7 @@ const scrollActive = () => {
 };
 window.addEventListener("scroll", scrollActive);
 
+
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 const sr = ScrollReveal({
   origin: "top",
@@ -85,14 +86,13 @@ sr.reveal(`.projects__card, .services__card, .experience__card`, {
   interval: 100,
 });
 
-
-// Image Blur Load Effect 
+// Image Blur Load Effect
 document.addEventListener("DOMContentLoaded", () => {
   const blurredImageDivs = document.querySelectorAll(".blurred-img");
 
-  blurredImageDivs.forEach(div => {
+  blurredImageDivs.forEach((div) => {
     const img = div.querySelector("img");
-    
+
     function loaded() {
       div.classList.add("loaded");
     }
@@ -104,3 +104,49 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+
+// ===========================
+// SMOOTH SCROLLING WITH LENIS
+// ===========================
+const initSmoothScroll = () => {
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true,
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
+  // Handle anchor link clicks
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetId = anchor.getAttribute("href");
+      const targetElement = document.querySelector(targetId);
+
+      if (targetElement) {
+        lenis.scrollTo(targetElement);
+      }
+    });
+  });
+};
+
+
+// ===========================
+// INITIALIZE ALL FEATURES
+// ===========================
+const initializeApp = () => {
+  initSmoothScroll();
+};
+
+// Run when DOM is ready
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initializeApp);
+} else {
+  initializeApp();
+}
