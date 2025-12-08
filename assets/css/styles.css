@@ -3,20 +3,17 @@
 
 /*=============== VARIABLES CSS ===============*/
 :root {
-  --hue: 200;
-  --first-color: hsl(var(--hue), 80%, 49%);
+  --hue: 194;
+  --first-color: hsl(var(--hue), 60%, 34%);
   --first-color-alt: hsl(var(--hue), 76%, 45%);
   --white-color: hsl(0, 0%, 98%);
   --black-color: hsl(0, 0%, 1%);
   --text-color: hsl(var(--hue), 2%, 66%);
   --body-color: hsl(var(--hue), 100%, 1%);
   --container-color: hsl(var(--hue), 2%, 10%);
-  --conic-gradient: conic-gradient(
-    from 150deg at 50% 45%,
-    hsl(var(--hue), 80%, 20%) 0deg,
-    hsl(var(--hue), 80%, 48%) 140deg,
-    hsl(var(--hue), 80%, 20%) 360deg
-  );
+  --conic-gradient: conic-gradient(from 150deg at 50% 45%, hsl(var(--hue), 80%, 20%) 0deg, hsl(190.26deg 67.69% 38.41%) 140deg, hsl(var(--hue), 80%, 20%) 360deg);
+
+ 
 
   /*========== Font and typography ==========*/
   --body-font: "Montserrat Alternates", sans-serif;
@@ -306,7 +303,6 @@ img {
   width: 100%;
   transform: translateY(-22px);
   justify-self: center;
-  filter: grayscale(0.8);
 }
 
 .info__description {
